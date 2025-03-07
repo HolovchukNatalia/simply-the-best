@@ -6,4 +6,4 @@ import 'accordion-js/dist/accordion.min.css';
 
 // import axios from 'axios';
 
-new Accordion('.accordion-container');
+new Accordion('.accordion-container', { elementClass: 'faq-item' });
