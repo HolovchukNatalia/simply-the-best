@@ -14,8 +14,6 @@
 }
 
 :root {
-	font-weight: 500;
-
 	color: #FAFAFA;
 	background-color: rgba(28, 29, 32, 1);
 
@@ -26,6 +24,10 @@
 	-webkit-text-size-adjust: 100%;
 }
 
+body {
+    font-family: 'InterTight', sans-serif; /* Повторно задаємо у body */
+    font-weight: 500;
+}
 .visually-hidden {
 	position: absolute;
 	width: 1px;
