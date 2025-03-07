@@ -25,7 +25,7 @@
 }
 
 body {
-    font-family: 'InterTight', sans-serif; /* Повторно задаємо у body */
+    font-family: 'InterTight', sans-serif;
     font-weight: 500;
 }
 .visually-hidden {
