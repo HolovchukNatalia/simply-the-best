@@ -1,0 +1,48 @@
+.covers {
+  position: relative;
+}
+.covers-wrapper {
+  position: absolute;
+  overflow: hidden;
+  width: 1440px;
+  height: 960px;
+  background-image: image-set(
+    url('../images/covers/covers-dsk-bckg.webp') 1x,
+    url('../images/covers/covers-dsk-bckg-2x.webp') 2x
+  );
+  background-position: center;
+  background-size: cover;
+}
+
+.covers-line {
+  height: 380px;
+  display: flex;
+  transform: rotate(16deg) translate(0, -400px);
+}
+
+.cover-item {
+  flex-shrink: 0;
+  margin-right: 60px;
+  height: 314px;
+  width: 544px;
+  animation-name: marqueeLine;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+
+.cover-item.animate {
+  animation-play-state: running;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(-20%);
+  }
+
+  to {
+    transform: translateX(-180%);
+  }
+}
