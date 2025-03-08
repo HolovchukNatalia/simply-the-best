@@ -1,21 +1,26 @@
 .covers {
-  position: relative;
+  /* position: relative; */
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .covers-wrapper {
-  position: absolute;
+  /* position: absolute; */
   overflow: hidden;
-  width: 1440px;
-  height: 960px;
+  /* width: 375px; */
+  width: 100%;
+  height: 508px;
   background-image: image-set(
-    url('../images/covers/covers-dsk-bckg.webp') 1x,
-    url('../images/covers/covers-dsk-bckg-2x.webp') 2x
+    url('../images/covers/covers-mob-bckg.webp') 1x,
+    url('../images/covers/covers-mob-bckg-2x.webp') 2x
   );
   background-position: center;
   background-size: cover;
 }
 
 .covers-line {
-  height: 380px;
+  height: 180px;
   display: flex;
   transform: rotate(16deg) translate(0, -400px);
 }
@@ -23,14 +28,14 @@
 .cover-item {
   flex-shrink: 0;
   margin-right: 60px;
-  height: 314px;
-  width: 544px;
+  height: 163px;
+  width: 282px;
   animation-name: marqueeLine;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-play-state: paused;
+  /* animation-play-state: paused; */
 }
 
 .cover-item.animate {
@@ -44,5 +49,74 @@
 
   to {
     transform: translateX(-180%);
+  }
+}
+
+/* ------------------------- Styles for Tablet devices -------------------------*/
+@media only screen and (min-width: 768px) {
+  .covers-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 1440px;
+    height: 960px;
+    background-image: image-set(
+      url('../images/covers/covers-dsk-bckg.webp') 1x,
+      url('../images/covers/covers-dsk-bckg-2x.webp') 2x
+    );
+    background-position: center;
+    background-size: cover;
+  }
+
+  .covers-line {
+    height: 380px;
+    display: flex;
+    transform: rotate(16deg) translate(0, -400px);
+  }
+
+  .cover-item {
+    flex-shrink: 0;
+    margin-right: 60px;
+    height: 314px;
+    width: 544px;
+    animation-name: marqueeLine;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: paused;
+  }
+}
+
+/* -------------------------Styles for Desktop devices -------------------------*/
+@media only screen and (min-width: 1440px) {
+  .covers-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 1440px;
+    height: 960px;
+    background-image: image-set(
+      url('../images/covers/covers-dsk-bckg.webp') 1x,
+      url('../images/covers/covers-dsk-bckg-2x.webp') 2x
+    );
+    background-position: center;
+    background-size: cover;
+  }
+  .covers-line {
+    height: 380px;
+    display: flex;
+    transform: rotate(16deg) translate(0, -400px);
+  }
+
+  .cover-item {
+    flex-shrink: 0;
+    margin-right: 60px;
+    height: 314px;
+    width: 544px;
+    animation-name: marqueeLine;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: paused;
   }
 }
