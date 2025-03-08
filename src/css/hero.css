@@ -7,6 +7,9 @@
   background-size: cover;
   height: auto;
   padding: 281px 16px 32px 16px;
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 @media screen and (min-resolution: 192dpi) {
@@ -36,8 +39,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 4px;
-  display: flex;
-  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .hero-social-link-item {
