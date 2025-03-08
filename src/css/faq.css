@@ -54,6 +54,8 @@
 .icon-arrow-down {
   stroke-width: 2px;
   stroke: #fafafa;
+  width: 100%;
+  height: 100%;
 }
 
 .icon-arrow-up {
@@ -107,7 +109,7 @@
   order: 6;
 }
 
-/* Styles for Tablet devices */
+/* --------------------------- Styles for Tablet devices ----------------------------- */
 @media only screen and (min-width: 768px) {
   .faq {
     padding-left: 32px;
@@ -133,9 +135,13 @@
     max-width: 632px;
     margin-bottom: 26px;
   }
+
+  .accordion-container .faq-item .ac-panel .ac-text {
+    max-width: 656px;
+  }
 }
 
-/* Styles for Desktop devices */
+/* --------------------------- Styles for Desktop devices --------------------------- */
 @media only screen and (min-width: 1440px) {
   .faq {
     padding-top: 82px;
@@ -172,6 +178,10 @@
   .accordion-container .faq-item .ac-header {
     max-width: 584px;
   }
+  .accordion-container .faq-item .ac-panel .ac-text {
+    max-width: 100%;
+  }
+
   .item-1 {
     order: 1;
   }
