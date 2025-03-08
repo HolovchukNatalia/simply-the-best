@@ -23,7 +23,7 @@
 
 .accordion-container .faq-item {
   position: relative;
-  width: 343px;
+  width: 100%;
   background-color: transparent;
   min-height: 74px;
   padding-top: 20px;
@@ -117,7 +117,6 @@
   }
 
   .accordion-container .faq-item {
-    width: 704px;
     min-height: 104px;
     padding-top: 32px;
     padding-bottom: 24px;
@@ -144,7 +143,7 @@
   }
 
   .accordion-container .faq-item {
-    width: 720px;
+    width: 50%;
     min-height: 104px;
     padding-top: 32px;
     padding-bottom: 26px;
