@@ -1,1 +1,61 @@
-<footer class="work container" id="work"></footer>
+<footer class="work container" id="work">
+  <h2 class="footer-text">
+    <div class="thumb">
+      <picture>
+        <source
+          media="(min-width: 1140px)"
+          srcset="
+            ./images/footer/footer-logo-dsk-tab.webp    1x,
+            ./images/footer/footer-logo-dsk-tab-2x.webp 2x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            ./images/footer/footer-logo-dsk-tab.webp    1x,
+            ./images/footer/footer-logo-dsk-tab-2x.webp 2x
+          "
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 320px)"
+          srcset="
+            ./images/footer/footer-logo-mob.webp    1x,
+            ./images/footer/footer-logo-mob-2x.webp 2x
+          "
+          type="image/webp"
+        />
+        <img
+          src="./images/footer/footer-logo-dsk-tab.webp"
+          alt="lloydjefferson"
+        />
+      </picture>
+    </div>
+    Let’s <span class="footer-accent"> work </span
+    ><span class="second-line"> together</span>
+  </h2>
+
+  <form class="footer-form">
+    <input
+      type="email"
+      class="footer-input email-input"
+      placeholder="clients@gmail.com"
+      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+      required
+    />
+    <p id="message" class="message"></p>
+    <input type="text" class="footer-input" placeholder="comments" />
+    <button type="submit" class="send-btn">Send</button>
+  </form>
+
+  <ul class="contact-info">
+    <li class="contact-item">
+      <a href="mailto:lloydjefferson@gmail.com" class="contact-link">
+        lloydjefferson@gmail.com
+      </a>
+    </li>
+    <li class="contact-item">
+      <a href="tel:+380111111111" class="contact-link"> +380 11 111 11 11 </a>
+    </li>
+  </ul>
+</footer>
