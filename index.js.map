@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"index.js","sources":["../src/js/faq.js"],"sourcesContent":["import Accordion from 'accordion-js';\nimport 'accordion-js/dist/accordion.min.css';\n\n// import Swiper from 'swiper';\n// import 'swiper/swiper-bundle.css';\n\n// import axios from 'axios';\n\nnew Accordion('.accordion-container', {\n  triggerClass: 'faq-trigger',\n  showMultiple: true,\n});\n"],"names":["Accordion"],"mappings":"svBAQA,IAAIA,EAAU,uBAAwB,CACpC,aAAc,cACd,aAAc,EAChB,CAAC"}
