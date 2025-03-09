@@ -5,7 +5,7 @@
     padding: 0 16px;
 }
 .benefits{
-    margin-top: 64px;
+    padding-top: 32px;
     padding-left: 16px;
     padding-right: 16px;
 }
@@ -21,6 +21,7 @@
 
 .work_btn{
     width: 344px;
+    padding-bottom: 32px;
 }
 .work {
     display: flex;
@@ -56,7 +57,7 @@
     letter-spacing: -0.02em;
     color: rgba(250, 250, 250, 0.6);
     text-align: left;
-    padding-left: 24px;
+    padding: 0 24px;
 }
 
 .btn_order {
@@ -67,14 +68,16 @@
     background-color: inherit;
     margin-top: 32px;
     padding: 0;
-    margin-bottom: 64px;
     margin-left: 0;
+    
 }
-.btn_order:hover {
+.btn_order:hover { 
+    transition: 200ms linear;
     border-color: rgba(250, 250, 250, 1);
 }
 .btn_order:focus{
     border-color: rgba(250, 250, 250, 1);
+    transition: 200ms linear;
 }
 
 .link_order {
@@ -117,15 +120,19 @@
         
     }
     .benefits{
-        margin-top: 96px;
+        padding-top: 48px;
     }
     .work_btn{
         width: auto;
+    }
+    .work_btn{
+        padding-bottom: 48px;
     }
 }
 @media only screen and (min-width: 1440px) {
     .benefits{
         display: flex;
+        padding-top: 82px;
     }
     .title{
         width: 100%;
@@ -133,10 +140,7 @@
     .inf_list{
         width: 332px;
     }
-    .btn_order{
-        margin-bottom: 164px;
-    }
-    .benefits{
-    margin-top: 168px;
-    }
+   .work_btn{
+    padding-bottom: 82px;
+   }
 }
