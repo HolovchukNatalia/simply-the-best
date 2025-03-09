@@ -77,9 +77,9 @@
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: #fafafa;
-  max-width: 289px;
+  width: auto;
   margin-bottom: 16px;
-  padding-right: 28px;
+  margin-right: 54px;
 }
 
 .accordion-container .faq-item .ac-panel .ac-text {
@@ -133,7 +133,7 @@
   }
 
   .accordion-container .faq-item .ac-header {
-    max-width: 632px;
+    margin-right: 60px;
     margin-bottom: 26px;
   }
 
@@ -177,8 +177,9 @@
   }
 
   .accordion-container .faq-item .ac-header {
-    max-width: 574px;
+    margin-right: 72px;
   }
+
   .accordion-container .faq-item .ac-panel .ac-text {
     max-width: 100%;
   }
