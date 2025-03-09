@@ -31,22 +31,43 @@
         />
       </picture>
     </div>
-    Let’s <span class="footer-accent"> work </span
+    <span class="first-line"
+      >Let’s <span class="footer-accent"> work </span></span
     ><span class="second-line"> together</span>
   </h2>
 
-  <form class="footer-form">
-    <input
-      type="email"
-      class="footer-input email-input"
-      placeholder="clients@gmail.com"
-      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-      required
-    />
-    <p id="message" class="message"></p>
-    <input type="text" class="footer-input" placeholder="comments" />
+  <form class="footer-form" autocomplete="on">
+    <div class="input-list">
+      <input
+        type="email"
+        class="footer-input email-input"
+        name="email"
+        placeholder="clients@gmail.com"
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        required
+        autocomplete="email"
+      />
+      <p id="message" class="message"></p>
+      <input
+        type="text"
+        class="footer-input comments-input"
+        name="comments"
+        placeholder="comments"
+        required
+        autocomplete="off"
+      />
+    </div>
     <button type="submit" class="send-btn">Send</button>
   </form>
+
+  <div id="modal-success" class="modal hidden">
+    <p>Success!</p>
+    <button id="close-modal">OK</button>
+  </div>
+
+  <div id="error-message" class="error-message hidden">
+    <p>Invalid email, try again</p>
+  </div>
 
   <ul class="contact-info">
     <li class="contact-item">
