@@ -1,12 +1,28 @@
 .reviews {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+  width: 1376px;
   text-align: center;
   padding: 40px;
   background-color: #181818;
   color: white;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .reviews-title {
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.4);
   margin-bottom: 20px;
 }
 
@@ -17,12 +33,25 @@
 
 .swiper-slide {
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
+  gap: 32px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 332px;
   background-color: #222;
-  padding: 20px;
-  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.review-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 284px;
 }
 
 .review-avatar {
@@ -33,8 +62,20 @@
 }
 
 .review-author {
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
   margin-bottom: 10px;
+}
+
+.review-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
 }
 
 .error-message {
