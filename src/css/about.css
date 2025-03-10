@@ -55,84 +55,68 @@
     display: none;
 }
 
-.about-me-list::before,
-.role-list::before,
-.educatin-list::before {
+.impose-about-me::after{
     content: "";
     display: block;
     width: 100%;
     height: 1px;
     background-color: rgba(250, 250, 250, 0.2);
-    margin-bottom: 8px;
-}
+    margin-top: 32px;
 
-.about-me-list::after,
-.role-list::after,
-.educatin-list::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(250, 250, 250, 0.2);
-    margin-top: 8px;
+    width: calc(100% - 64px);
+    margin-left: 32px;
+    margin-right: 32px;
 }
 
 
-    .impose-about-me {
-        margin-top: 48px;
-        width: 100%;
-        max-width: 1200px;
-    }
+.impose-about-me {
+    padding-left: 32px;
+    padding-right: 32px;
+    width: calc(100% - 32px);
+    box-sizing: border-box;
+}
 
-    .list-about-me {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+.list-about-me {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
 .list-about-me li {
     position: relative;
     padding: 16px;
-    text-align: right;
+    text-align: left;
     margin-right: 100px;
 }
 
-.list-about-me li::before,
 .list-about-me li::after {
-        content: "";
         display: block;
         width: 100%;
         height: 1px;
-        background-color: rgba(250, 250, 250, 0.2);
         margin: 32px 0;
-}
-
-.list-about-me li {
-    position: relative;
-    padding-right: 100px;
-    text-align: left;
+        width: calc(100% - 32px);
 }
 
     
 .list-about-me li::after {
     content: "";
     position: absolute;
-    top: -16px;
-    left: 1098px;
+    top: -65px;
     width: 40px;
     height: 40px;
     background-color: transparent;
-    border: 2px solid rgba(250, 250, 250, 0.2);
+    border: 1px solid rgba(250, 250, 250, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    right: 0;
 }
     
 .list-about-me li .up-arrow-icon {
     position: absolute;
-    top: 24px;
-    left: 1106px;
+    top: -24px;
+    right: 0;
     width: 24px;
     height: 24px;
     fill: #FAFAFA;
@@ -146,6 +130,8 @@
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color: rgba(250, 250, 250, 0.4);
+    position: relative; /* Залишає елемент у потоці */
+    display: inline-block; /* Забезпечує правильне вирівнювання */
 }
 
 .main-text {
@@ -153,14 +139,16 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.02em;
+    margin-left: 412px; /* Відступ від .list-label */
+    display: inline-block; /* Запобігає переносу тексту */
 }
 
 .word-list {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 184px;
-    margin-left: 64px;
+    margin-top: 1rem;
+    margin-left: 1rem;
     margin-right: 176px;
     gap: 0px;
 }
@@ -175,6 +163,11 @@
     align-items: center;
     width: 200px;
     height: 200px;
+}
+
+.word-list span:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 
@@ -195,15 +188,17 @@
 }
 
 .arrow-right {
-    position: absolute;
-    bottom: -2155px;
-    right: 90px;
+    margin-right: -1150px;
+    margin-top: -115px;
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2px;
 }
 
 .right-arrow-icon {
@@ -225,10 +220,10 @@
 }
 
 @media (max-width: 767px) {
-    .word-list span:nth-child(n+3) {
-        display: none;
-    }
-    }
+.word-list span:nth-child(n+3) {
+    display: none;
+}
+}
 
 
 /* === Планшети (768px) === */
@@ -279,6 +274,29 @@
     .word-list span:nth-child(n+4) {
         display: none;
     }
+
+    .container {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-me-content {
+        max-width: 90%;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 
@@ -309,4 +327,6 @@
     height: 40px;
     background-color: transparent;
 }
+
+
 }
