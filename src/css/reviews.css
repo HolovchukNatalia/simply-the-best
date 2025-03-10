@@ -5,16 +5,9 @@
   flex-direction: column;
   gap: 32px;
   width: 1376px;
-  text-align: center;
   padding: 40px;
   background-color: #181818;
   color: white;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 32px;
 }
 
 .reviews-title {
@@ -29,14 +22,17 @@
 .swiper {
   width: 100%;
   padding: 20px 0;
+  position: relative;
+}
+
+.swiper-wrapper {
+  display: flex;
 }
 
 .swiper-slide {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 20px;
   padding: 32px 24px;
@@ -47,41 +43,44 @@
 
 .review-content {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   flex-direction: column;
-  gap: 20px;
-  width: 284px;
+  gap: 16px;
+  width: 100%;
 }
 
 .review-avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-bottom: 10px;
 }
 
 .review-author {
   font-weight: 600;
   font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
   color: #fafafa;
-  margin-bottom: 10px;
 }
 
 .review-text {
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
   color: rgba(250, 250, 250, 0.6);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .error-message {
   color: red;
   font-size: 18px;
   margin-top: 20px;
+  text-align: center;
 }
 
 .hidden {

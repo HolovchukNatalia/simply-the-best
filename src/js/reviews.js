@@ -23,11 +23,11 @@ async function fetchReviews() {
 }
 
 function renderReviews(reviews) {
-  const wrapper = document.querySelector('.swiper-wrapper');
+  const wrapper = document.querySelector('.reviews-list');
   const errorMessage = document.querySelector('.error-message');
 
   if (!wrapper) {
-    console.error('Не найден .swiper-wrapper!');
+    console.error('Не найден .reviews-list!');
     return;
   }
 
@@ -42,7 +42,7 @@ function renderReviews(reviews) {
   errorMessage.classList.add('hidden');
 
   reviews.forEach(({ avatar_url, author, review }) => {
-    const listItem = document.createElement('div'); // Должен быть <div>, не <li>!
+    const listItem = document.createElement('li');
     listItem.classList.add('swiper-slide');
     listItem.innerHTML = `
       <div class="review-content">
@@ -54,7 +54,7 @@ function renderReviews(reviews) {
     wrapper.appendChild(listItem);
   });
 
-  console.log('Отзывы загружены, вызываем initSwiper()...');
+  console.log('Отзывы загружены, обновляем Swiper...');
   initSwiper();
 }
 
@@ -64,7 +64,7 @@ function initSwiper() {
     return;
   }
 
-  new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper', {
     slidesPerView: 4,
     spaceBetween: 20,
     navigation: {
@@ -82,9 +82,14 @@ function initSwiper() {
       1024: { slidesPerView: 3 },
       1280: { slidesPerView: 4 },
     },
+    on: {
+      init: function () {
+        console.log('Swiper инициализирован');
+      },
+    },
   });
 
-  console.log('Swiper успешно инициализирован!');
+  swiper.update();
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
