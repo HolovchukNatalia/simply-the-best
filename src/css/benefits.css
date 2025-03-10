@@ -19,7 +19,7 @@
     padding-bottom: 32px;
 }
 
-.work {
+.advantages {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +102,7 @@
 
 @media only screen and (min-width: 768px) {
 
-    .work {
+    .advantages {
         flex-direction: row;
         flex-wrap: wrap;
         margin-bottom: 64px;
