@@ -38,7 +38,7 @@ function renderReviews(reviews) {
   errorMessage.classList.add('hidden');
 
   reviews.forEach(({ avatar_url, author, review }) => {
-    const listItem = document.createElement('div');
+    const listItem = document.createElement('div'); // Должен быть <div>, не <li>!
     listItem.classList.add('swiper-slide');
     listItem.innerHTML = `
       <div class="review-content">
