@@ -8,13 +8,16 @@ const API_URL = 'https://portfolio-js.b.goit.study/api/reviews';
 
 async function fetchReviews() {
   try {
+    console.log('Запрос на сервер...');
     const response = await axios.get(API_URL);
+    console.log('Ответ от сервера:', response.data);
     return response.data;
   } catch (error) {
     iziToast.error({
       title: 'Error',
       message: 'Failed to load reviews. Please try again later.',
     });
+    console.error('Ошибка при загрузке отзывов:', error);
     return [];
   }
 }
@@ -24,7 +27,7 @@ function renderReviews(reviews) {
   const errorMessage = document.querySelector('.error-message');
 
   if (!wrapper) {
-    console.error('Не найден .swiper-wrapper');
+    console.error('Не найден .swiper-wrapper!');
     return;
   }
 
@@ -32,6 +35,7 @@ function renderReviews(reviews) {
 
   if (reviews.length === 0) {
     errorMessage.classList.remove('hidden');
+    console.warn('Нет отзывов, показываем Not Found.');
     return;
   }
 
@@ -50,11 +54,16 @@ function renderReviews(reviews) {
     wrapper.appendChild(listItem);
   });
 
-  console.log('Отзывы загружены, инициализируем Swiper...');
+  console.log('Отзывы загружены, вызываем initSwiper()...');
   initSwiper();
 }
 
 function initSwiper() {
+  if (!document.querySelector('.swiper-slide')) {
+    console.warn('Нет слайдов, Swiper не будет инициализирован.');
+    return;
+  }
+
   new Swiper('.swiper', {
     slidesPerView: 4,
     spaceBetween: 20,
@@ -79,7 +88,7 @@ function initSwiper() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log('Загрузка отзывов...');
+  console.log('Страница загружена, начинаем работу...');
   const reviews = await fetchReviews();
   renderReviews(reviews);
 });
