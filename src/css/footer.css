@@ -56,6 +56,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 .footer-input {
   position: relative;
@@ -119,9 +120,7 @@
 }
 .contact-info {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  color: #ccc;
+  gap: 4px;
 }
 @media (max-width: 375px) {
   .contact-info {
@@ -140,6 +139,7 @@
   border: 1px solid #fafafa;
 }
 .contact-link {
+  color: #fafafa;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
@@ -189,8 +189,10 @@
   }
   .contact-item {
     padding: 18px 32px;
-    font-size: 16px;
     height: 55px;
+  }
+  .contact-link {
+    font-size: 16px;
   }
 }
 /*Styles for desktop devices*/
