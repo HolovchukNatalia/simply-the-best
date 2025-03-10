@@ -45,9 +45,16 @@
 .hero-social-link-item {
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 60px;
-  padding: 10px 12px;
-  width: auto;
+  width: 37px;
   height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-email {
+  width: auto;
+  padding: 10px 12px;
 }
 
 .hero-social-link-item-text {
@@ -84,6 +91,7 @@
 
   .hero-social-link-item {
     padding: 18px 20px;
+    height: 55px;
   }
 
   .hero-social-link-item-text {

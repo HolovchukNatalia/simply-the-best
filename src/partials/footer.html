@@ -1,1 +1,81 @@
-<footer class="work container" id="work"></footer>
+<footer class="work container" id="work">
+  <h2 class="footer-text">
+    <div class="thumb">
+      <picture>
+        <source
+          media="(min-width: 1140px)"
+          srcset="
+            ./images/footer/footer-logo-dsk-tab.webp    1x,
+            ./images/footer/footer-logo-dsk-tab-2x.webp 2x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            ./images/footer/footer-logo-dsk-tab.webp    1x,
+            ./images/footer/footer-logo-dsk-tab-2x.webp 2x
+          "
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 320px)"
+          srcset="
+            ./images/footer/footer-logo-mob.webp    1x,
+            ./images/footer/footer-logo-mob-2x.webp 2x
+          "
+          type="image/webp"
+        />
+        <img
+          src="./images/footer/footer-logo-dsk-tab.webp"
+          alt="lloydjefferson"
+        />
+      </picture>
+    </div>
+    <span class="first-line"
+      >Let’s <span class="footer-accent"> work </span></span
+    ><span class="second-line"> together</span>
+  </h2>
+
+  <form class="footer-form" autocomplete="on">
+    <div class="input-list">
+      <input
+        type="email"
+        class="footer-input email-input"
+        name="email"
+        placeholder="clients@gmail.com"
+        required
+        autocomplete="email"
+      />
+      <p id="message" class="message"></p>
+      <input
+        type="text"
+        class="footer-input comments-input"
+        name="comments"
+        placeholder="comments"
+        required
+        autocomplete="off"
+      />
+    </div>
+    <button type="submit" class="send-btn">Send</button>
+  </form>
+
+  <div id="modal-success" class="modal hidden">
+    <p>Success!</p>
+    <button id="close-modal">OK</button>
+  </div>
+
+  <div id="error-message" class="error-message hidden">
+    <p>Invalid email, try again</p>
+  </div>
+
+  <ul class="contact-info">
+    <li class="contact-item">
+      <a href="mailto:lloydjefferson@gmail.com" class="contact-link">
+        lloydjefferson@gmail.com
+      </a>
+    </li>
+    <li class="contact-item">
+      <a href="tel:+3801111111111" class="contact-link"> +380 11 1111 11 11 </a>
+    </li>
+  </ul>
+</footer>

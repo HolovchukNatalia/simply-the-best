@@ -1,7 +1,16 @@
-import Accordion from "accordion-js";
-import "accordion-js/dist/accordion.min.css";
+const targetElement = document.querySelector('.covers-wrapper');
 
-import Swiper from 'swiper';
-import 'swiper/swiper-bundle.css';
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animation');
+      } else {
+        entry.target.classList.remove('animation');
+      }
+    });
+  },
+  { threshold: 0 }
+);
 
-import axios from 'axios';
+observer.observe(targetElement);
