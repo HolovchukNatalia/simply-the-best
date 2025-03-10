@@ -35,3 +35,9 @@ mobileMenu.classList.remove('is-opened');
 document.body.style.overflow = 'auto';
 });
 });
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+        mobileMenu.classList.remove('is-opened');
+    }
+});
