@@ -1,1 +1,53 @@
-<header class="header container" id="header"></header>
+<header class="header container" id="header">
+  <div class="header-logo-container">
+    <img
+      src="/images/header-hero/logo.webp"
+      srcset="../images/header-hero/logo-2x.webp 2x"
+      alt="Logo"
+    />
+    <p class="header-logo-text">jefferson*</p>
+  </div>
+
+  <button class="burger-btn" id="burger">
+    <svg class="icon-menu" width="28" height="28">
+      <use href="/images/sprite.svg#icon-menu"></use>
+    </svg>
+  </button>
+
+  <div class="menu-cont">
+    <button class="menu-btn" id="menu-btn">Menu</button>
+    <nav class="header-nav visually-hidden">
+      <ul class="header-nav-list" id="nav-list">
+        <li class="header-nav-list-item"><a href="#about">About me</a></li>
+        <li class="header-nav-list-item"><a href="#benefits">Benefits</a></li>
+        <li class="header-nav-list-item"><a href="#projects">Projects</a></li>
+        <li class="header-nav-list-item"><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <a href="#work" class="order-btn">Order the project</a>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-container">
+      <button class="close-menu-btn" id="close-menu">
+        <svg class="close-menu-icon" width="28" height="28">
+          <use href="../images/sprite.svg#icon-close-menu"></use>
+        </svg>
+      </button>
+      <ul class="mobile-menu-list">
+        <li class="mobile-menu-list-item"><a href="#about">About me</a></li>
+        <li class="mobile-menu-list-item">
+          <a href="#benefits">Benefits</a>
+        </li>
+        <li class="mobile-menu-list-item">
+          <a href="#projects">Projects</a>
+        </li>
+        <li class="mobile-menu-list-item"><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#work" class="mobile-order-btn" id="close-menu"
+        >Order the project</a
+      >
+    </div>
+  </div>
+</header>
