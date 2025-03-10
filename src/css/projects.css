@@ -164,7 +164,7 @@
 }
 
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1440px) {
     .swiper-slide {
         display: flex !important;
     }
