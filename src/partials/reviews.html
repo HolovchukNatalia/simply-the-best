@@ -1,11 +1,22 @@
 <section class="reviews container" id="reviews">
+  <!-- Объект №1 - Секция отзывов -->
   <h2 class="reviews-title">Reviews</h2>
+  <!-- Объект №2 -->
 
   <div class="swiper">
-    <ul class="swiper-wrapper reviews-list" aria-label="Customer reviews"></ul>
+    <!-- Объект №3 - Контейнер слайдера -->
 
-    <div class="swiper-button-prev" aria-label="Previous review"></div>
-    <div class="swiper-button-next" aria-label="Next review"></div>
+    <ul class="swiper-wrapper reviews-list" aria-label="Customer reviews">
+      <!-- Объект №4 - Список карточек отзывов -->
+    </ul>
+
+    <div class="swiper-controls">
+      <!-- Объект №5 - Контейнер управления -->
+      <button class="swiper-button-prev" aria-label="Previous review" disabled>
+        &lt;
+      </button>
+      <button class="swiper-button-next" aria-label="Next review">&gt;</button>
+    </div>
   </div>
 
   <p class="error-message hidden">Not found</p>

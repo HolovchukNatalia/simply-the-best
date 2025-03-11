@@ -8,16 +8,14 @@ const API_URL = 'https://portfolio-js.b.goit.study/api/reviews';
 
 async function fetchReviews() {
   try {
-    console.log('Запрос на сервер...');
     const response = await axios.get(API_URL);
-    console.log('Ответ от сервера:', response.data);
     return response.data;
   } catch (error) {
     iziToast.error({
       title: 'Error',
       message: 'Failed to load reviews. Please try again later.',
     });
-    console.error('Ошибка при загрузке отзывов:', error);
+    console.error(error);
     return [];
   }
 }
@@ -27,7 +25,7 @@ function renderReviews(reviews) {
   const errorMessage = document.querySelector('.error-message');
 
   if (!wrapper) {
-    console.error('Не найден .reviews-list!');
+    console.error('Reviews list not found');
     return;
   }
 
@@ -35,7 +33,6 @@ function renderReviews(reviews) {
 
   if (reviews.length === 0) {
     errorMessage.classList.remove('hidden');
-    console.warn('Нет отзывов, показываем Not Found.');
     return;
   }
 
@@ -45,8 +42,8 @@ function renderReviews(reviews) {
     const listItem = document.createElement('li');
     listItem.classList.add('swiper-slide');
     listItem.innerHTML = `
-      <div class="review-content">
-        <img src="${avatar_url}" alt="${author}" class="review-avatar">
+      <img src="${avatar_url}" alt="${author}" class="review-avatar"> <!-- Объект №8 -->
+      <div class="review-content"> <!-- Объект №9 -->
         <h3 class="review-author">${author}</h3>
         <p class="review-text">${review}</p>
       </div>
@@ -54,22 +51,21 @@ function renderReviews(reviews) {
     wrapper.appendChild(listItem);
   });
 
-  console.log('Отзывы загружены, обновляем Swiper...');
   initSwiper();
 }
 
 function initSwiper() {
   if (!document.querySelector('.swiper-slide')) {
-    console.warn('Нет слайдов, Swiper не будет инициализирован.');
     return;
   }
 
   const swiper = new Swiper('.swiper', {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+      disabledClass: 'swiper-button-disabled',
     },
     keyboard: {
       enabled: true,
@@ -77,14 +73,15 @@ function initSwiper() {
     },
     watchOverflow: true,
     breakpoints: {
-      320: { slidesPerView: 1 },
       768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-      1280: { slidesPerView: 4 },
+      1440: { slidesPerView: 4 },
     },
     on: {
       init: function () {
-        console.log('Swiper инициализирован');
+        updateButtons(this);
+      },
+      slideChange: function () {
+        updateButtons(this);
       },
     },
   });
@@ -92,8 +89,12 @@ function initSwiper() {
   swiper.update();
 }
 
+function updateButtons(swiper) {
+  document.querySelector('.swiper-button-prev').disabled = swiper.isBeginning;
+  document.querySelector('.swiper-button-next').disabled = swiper.isEnd;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log('Страница загружена, начинаем работу...');
   const reviews = await fetchReviews();
   renderReviews(reviews);
 });
