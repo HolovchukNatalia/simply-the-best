@@ -87,7 +87,7 @@
   }
   .hero-title-div {
     width: 632px;
-    max-width: 632px;
+    max-width: none;
     padding-left: 0px;
     padding-right: 0px;
     margin-right: 72px;
@@ -132,7 +132,6 @@
   }
 
   .hero-title-div {
-    max-width: 1084px;
     width: 1084px;
     margin-right: 146px;
   }
