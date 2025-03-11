@@ -107,11 +107,10 @@
 }
 
 .projects-arrow {
-    display: inline-block !important;
+    fill: #fafafa;
+    stroke: #fafafa;
     width: 24px !important;
     height: 24px !important;
-    stroke: #fafafa !important;
-    stroke-width: 3 !important;
 }
 
 
@@ -164,7 +163,7 @@
 }
 
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1440px) {
     .swiper-slide {
         display: flex !important;
     }
