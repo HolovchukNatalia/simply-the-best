@@ -11,6 +11,7 @@
 }
 /* ------------------------ Part 1 text + Photo --------------------------- */
 .top-content {
+  margin-top: 32px;
 }
 
 .grey-frame {
@@ -19,7 +20,7 @@
   width: 100%;
   height: 500px;
   background-color: #242527;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .frame-text {
@@ -141,129 +142,93 @@ ul.list-about-me li.about-me-item div.list-content p.main-text {
 }
 
 /* ------------------------ Part 3 --------------------------- */
-/* 
-.swiper2 {
-  width: 100%;
-  height: 100%;
-}
 
-.swiper2-slide {
-  text-align: center;
-  font-size: 18px;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper2-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.word-position {
+.tech-swiper-top {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+}
+
+/* swiper element */
+.tech-swiper {
+  width: 260px;
   height: 130px;
+  overflow: hidden;
 }
 
-.word-list {
+/* next button */
+.tech-button-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* techs list */
+.tech-swiper .tech-list {
   width: 100%;
   height: 100%;
 }
 
-.word-wrapper {
-  width: 100%;
-  height: 100%;
-}
-
-.word-list .word-item {
+/* one tech item */
+.tech-swiper .tech-list .tech-item {
   color: #fafafa;
   width: 130px;
   height: 130px;
+  flex: 0 0 130px;
   border: 1px solid rgba(250, 250, 250, 0.2);
-  border-radius: 100px;
+  border-radius: 50%;
   background-color: transparent;
   text-align: center;
   font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
-.word-list .word-item img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-
-/* .word-list span:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.word-list span::before {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 2px solid rgba(250, 250, 250, 0.2);
-  border-radius: 100%;
-} */
-/* 
-.teach {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
+/* active item */
+.tech-swiper .tech-list .tech-item.swiper-slide-active {
   color: #fafafa;
-}
-
-.arrow-right {
-  margin-right: -350px;
-  margin-top: -115px;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  fill: none;
-  stroke: #fff;
-  stroke-width: 2px;
+  background-color: #ed3b44;
 }
 
 .right-arrow-icon {
-  width: 32px;
-  height: 32px;
-  fill: #3b3b3b;
-  cursor: pointer;
-} */
-
-/* .word-list span:first-child {
-  position: relative;
-  color: #fafafa;
+  stroke: #fafafa;
+  fill: #fafafa;
+  opacity: 0.35;
 }
 
-.word-list span:first-child::before {
-  background-color: #ed3b44;
-  border: none;
-  z-index: -1;
-} */
+/* tech text */
+.tech {
+  padding: 0 10px;
+  word-break: break-word;
+  text-align: center;
+}
 
 /* --------------------------- Styles for Tablet devices ----------------------------- */
 @media only screen and (min-width: 768px) {
   .about {
     max-width: 768px;
     gap: 64px;
+    padding: 32px 32px;
   }
   /* --------------- Part 1 text + Photo ----------------- */
-
+  .top-content {
+  }
   .grey-frame {
     height: 700px;
+    margin-bottom: 16px;
   }
 
   .frame-text {
@@ -275,7 +240,7 @@ ul.list-about-me li.about-me-item div.list-content p.main-text {
 
   .responsive-photo {
     width: 100%;
-    height: 100%;
+    height: 700px;
   }
 
   /* --------------- Part 2 Accordion ------------- */
@@ -303,6 +268,27 @@ ul.list-about-me li.about-me-item div.list-content p.main-text {
     padding-top: 0;
     min-height: 11px;
   }
+
+  /* ------------------------ Part 3 --------------------------- */
+
+  /* swiper element */
+  .tech-swiper {
+    width: 600px;
+    height: 200px;
+  }
+
+  /* next button */
+  .tech-button-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* one tech item */
+  .tech-swiper .tech-list .tech-item {
+    width: 200px;
+    height: 200px;
+    flex: 0 0 200px;
+  }
 }
 /* --------------------------- Styles for Desktop devices --------------------------- */
 @media only screen and (min-width: 1440px) {
@@ -314,6 +300,7 @@ ul.list-about-me li.about-me-item div.list-content p.main-text {
 
   .grey-frame {
     height: 700px;
+    margin-bottom: 0;
   }
   .top-content {
     display: flex;
@@ -342,5 +329,22 @@ ul.list-about-me li.about-me-item div.list-content p.main-text {
     padding-bottom: 10px;
     padding-top: 0;
     min-height: 22px;
+  }
+
+  /* ------------------------ Part 3 --------------------------- */
+
+  /* swiper element */
+  .tech-swiper {
+    width: 1200px;
+  }
+
+  .tech-swiper-top {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  /* next button */
+  .tech-button-next {
+    right: 32px;
   }
 }

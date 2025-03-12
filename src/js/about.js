@@ -3,8 +3,6 @@ import 'accordion-js/dist/accordion.min.css';
 
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
 import { Navigation, Keyboard } from 'swiper/modules';
 
 new Accordion('.list-about-me', {
@@ -13,25 +11,40 @@ new Accordion('.list-about-me', {
   openOnInit: [0],
 });
 
-// const swiper = new Swiper('.word-list', {
-//   modules: [Navigation, Keyboard],
-//   slidesPerView: 2,
-//   spaceBetween: 0,
-//   loop: true,
-//   navigation: {
-//     nextEl: '.word-button-next',
-//   },
-//   keyboard: {
-//     enabled: true,
-//     onlyInViewport: true,
-//   },
-//   grabCursor: true,
-//   //   on: {
-//   //     init: function () {
-//   //       this.navigation.update();
-//   //     },
-//   //     slideChange: function () {
-//   //       this.navigation.update();
-//   //     },
-//   //   },
-// });
+const techSwiper = new Swiper('.tech-swiper', {
+  modules: [Navigation, Keyboard],
+  loop: true,
+  slidesPerGroup: 1,
+  spaceBetween: 0,
+  watchOverflow: true,
+  slidesPerView: 'auto',
+  navigation: {
+    nextEl: '.tech-button-next',
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  grabCursor: true,
+  on: {
+    init: function () {
+      this.navigation.update();
+    },
+    slideChange: function () {
+      this.navigation.update();
+    },
+    resize: function () {
+      this.navigation.update();
+    },
+  },
+});
+
+const techSwiperContainer = document.querySelector('.tech-swiper');
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Tab') {
+    if (techSwiperContainer.contains(document.activeElement)) {
+      techSwiper.slideNext();
+      event.preventDefault();
+    }
+  }
+});
