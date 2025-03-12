@@ -9,6 +9,7 @@ const prevButton = document.querySelector('.swiper-button-prev');
 const nextButton = document.querySelector('.swiper-button-next');
 
 let swiperInstance = null;
+let previousScreenWidth = window.innerWidth;
 
 async function fetchReviews() {
   try {
@@ -23,11 +24,7 @@ async function fetchReviews() {
     }
 
     renderReviews(reviews);
-
-    setTimeout(() => {
-      equalizeReviewHeights();
-      initSwiper();
-    }, 0);
+    setTimeout(() => initSwiper(), 100);
   } catch (error) {
     console.error('Error fetching reviews:', error);
     reviewsList.innerHTML = `<li class="not-found"><p>Not found</p></li>`;
@@ -49,25 +46,6 @@ function renderReviews(reviews) {
   });
 
   applyResponsiveStyles();
-  window.addEventListener('resize', handleResize);
-}
-
-function equalizeReviewHeights() {
-  const reviewCards = document.querySelectorAll('.review-card');
-  if (!reviewCards.length) return;
-
-  let maxHeight = 0;
-
-  reviewCards.forEach(card => {
-    card.style.height = 'auto'; // Скидаємо висоту перед вимірюванням
-    maxHeight = Math.max(maxHeight, card.offsetHeight);
-  });
-
-  reviewCards.forEach(card => {
-    card.style.height = `${maxHeight}px`;
-  });
-
-  if (swiperInstance) swiperInstance.update();
 }
 
 function applyResponsiveStyles() {
@@ -76,14 +54,8 @@ function applyResponsiveStyles() {
   const reviewsSection = document.querySelector('.reviews');
   const sliderButtons = document.querySelectorAll('.slider-btn');
 
-  containerReviews.style.removeProperty('max-width');
-  containerReviews.style.removeProperty('width');
-  containerReviews.style.removeProperty('padding');
-  reviewsSection.style.removeProperty('padding');
-
   if (screenWidth <= 767) {
     containerReviews.style.maxWidth = '375px';
-    containerReviews.style.maxHeight = '302px';
     containerReviews.style.padding = '0 16px';
     reviewsSection.style.padding = '32px 0';
   } else if (screenWidth <= 1439) {
@@ -91,6 +63,10 @@ function applyResponsiveStyles() {
     containerReviews.style.padding = '0 16px';
     reviewsSection.style.padding = '48px 0';
   } else {
+    containerReviews.style.removeProperty('max-width');
+    containerReviews.style.removeProperty('width');
+    containerReviews.style.removeProperty('padding');
+    reviewsSection.style.removeProperty('padding');
   }
 
   sliderButtons.forEach(btn => {
@@ -99,22 +75,39 @@ function applyResponsiveStyles() {
     btn.style.padding = '14px';
   });
 
-  equalizeReviewHeights(); 
+  if (swiperInstance) swiperInstance.update();
 }
 
 function handleResize() {
+  const currentScreenWidth = window.innerWidth;
+
+  if (
+    (previousScreenWidth <= 767 && currentScreenWidth > 767) ||
+    (previousScreenWidth > 767 && currentScreenWidth <= 767) ||
+    (previousScreenWidth <= 1439 && currentScreenWidth > 1439) ||
+    (previousScreenWidth > 1439 && currentScreenWidth <= 1439)
+  ) {
+    setTimeout(() => {
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+      }
+      initSwiper();
+    }, 100);
+  }
+
   applyResponsiveStyles();
-  if (swiperInstance) swiperInstance.update();
+  previousScreenWidth = currentScreenWidth;
 }
 
 function initSwiper() {
   if (swiperInstance) swiperInstance.destroy(true, true);
-
   swiperInstance = new Swiper('.reviews-slider', {
     modules: [Navigation, Keyboard],
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 16,
+    observer: true,
+    observeParents: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -131,7 +124,6 @@ function initSwiper() {
     on: {
       init: function () {
         updateNavigation(this);
-        equalizeReviewHeights();
       },
       slideChange: function () {
         updateNavigation(this);
@@ -169,4 +161,8 @@ function disableButtons() {
   disableButton(nextButton);
 }
 
+// Додаємо обробник зміни розміру
+window.addEventListener('resize', handleResize);
+
 fetchReviews();
+
