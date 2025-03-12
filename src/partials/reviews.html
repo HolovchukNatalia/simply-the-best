@@ -1,23 +1,26 @@
 <section class="reviews container" id="reviews">
-  <!-- Объект №1 - Секция отзывов -->
-  <h2 class="reviews-title">Reviews</h2>
-  <!-- Объект №2 -->
-
-  <div class="swiper">
-    <!-- Объект №3 - Контейнер слайдера -->
-
-    <ul class="swiper-wrapper reviews-list" aria-label="Customer reviews">
-      <!-- Объект №4 - Список карточек отзывов -->
-    </ul>
-
-    <div class="swiper-controls">
-      <!-- Объект №5 - Контейнер управления -->
-      <button class="swiper-button-prev" aria-label="Previous review" disabled>
-        &lt;
+  <div class="container-reviews">
+    <h2 class="reviews-title">REVIEWS</h2>
+    <div class="swiper reviews-slider">
+      <ul class="swiper-wrapper reviews-list"></ul>
+    </div>
+    <div class="slider-controls">
+      <button
+        class="slider-btn prev swiper-button-prev"
+        aria-label="Previous review"
+      >
+        <svg class="slider-icon">
+          <use href="/images/sprite.svg#icon-arrow-narrow-right"></use>
+        </svg>
       </button>
-      <button class="swiper-button-next" aria-label="Next review">&gt;</button>
+      <button
+        class="slider-btn next swiper-button-next"
+        aria-label="Next review"
+      >
+        <svg class="slider-icon">
+          <use href="/images/sprite.svg#icon-arrow-narrow-left"></use>
+        </svg>
+      </button>
     </div>
   </div>
-
-  <p class="error-message hidden">Not found</p>
 </section>
