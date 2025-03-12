@@ -76,8 +76,14 @@ function applyResponsiveStyles() {
   const reviewsSection = document.querySelector('.reviews');
   const sliderButtons = document.querySelectorAll('.slider-btn');
 
+  containerReviews.style.removeProperty('max-width');
+  containerReviews.style.removeProperty('width');
+  containerReviews.style.removeProperty('padding');
+  reviewsSection.style.removeProperty('padding');
+
   if (screenWidth <= 767) {
     containerReviews.style.maxWidth = '375px';
+    containerReviews.style.maxHeight = '302px';
     containerReviews.style.padding = '0 16px';
     reviewsSection.style.padding = '32px 0';
   } else if (screenWidth <= 1439) {
@@ -85,10 +91,6 @@ function applyResponsiveStyles() {
     containerReviews.style.padding = '0 16px';
     reviewsSection.style.padding = '48px 0';
   } else {
-    containerReviews.style.removeProperty('max-width');
-    containerReviews.style.removeProperty('width');
-    containerReviews.style.removeProperty('padding');
-    reviewsSection.style.removeProperty('padding');
   }
 
   sliderButtons.forEach(btn => {
@@ -97,7 +99,7 @@ function applyResponsiveStyles() {
     btn.style.padding = '14px';
   });
 
-  equalizeReviewHeights();
+  equalizeReviewHeights(); 
 }
 
 function handleResize() {
