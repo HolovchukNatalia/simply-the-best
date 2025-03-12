@@ -5,12 +5,6 @@ import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { Navigation, Keyboard } from 'swiper/modules';
 
-// new Accordion('.list-about-me', {
-//   triggerClass: 'about-trigger',
-//   showMultiple: true,
-//   openOnInit: [0],
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
   new Accordion('.list-about-me', {
     triggerClass: 'about-trigger',
@@ -48,16 +42,6 @@ const techSwiper = new Swiper('.tech-swiper', {
   },
 });
 
-// const techSwiperContainer = document.querySelector('.tech-swiper');
-// document.addEventListener('keydown', function (event) {
-//   if (event.key === 'Tab') {
-//     if (techSwiperContainer.contains(document.activeElement)) {
-//       techSwiper.slideNext();
-//       event.preventDefault();
-//     }
-//   }
-// });
-
 const techSwiperContainer = document.querySelector('.tech-swiper');
 
 if (techSwiperContainer) {
@@ -69,6 +53,4 @@ if (techSwiperContainer) {
       }
     }
   });
-} else {
-  console.error('❌ techSwiperContainer не знайдено!');
 }
