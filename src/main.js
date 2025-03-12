@@ -1,4 +1,4 @@
-import './css/styles.css'
+import './css/styles.css';
 
 import './js/header';
 import './js/hero';
