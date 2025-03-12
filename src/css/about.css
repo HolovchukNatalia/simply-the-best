@@ -167,7 +167,9 @@ ul.list-about-me li.about-me-item div.list-content p.main-text {
   justify-content: center;
   cursor: pointer;
   z-index: 10;
+
 }
+
 
 /* techs list */
 .tech-swiper .tech-list {
@@ -199,8 +201,8 @@ ul.list-about-me li.about-me-item div.list-content p.main-text {
 }
 
 .right-arrow-icon {
+  fill: none;
   stroke: #fafafa;
-  fill: #fafafa;
   opacity: 0.35;
 }
 
