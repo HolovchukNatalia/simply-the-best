@@ -225,7 +225,7 @@
   .work {
     background-image: url('/images/footer/footer-bg-tablet.png');
     background-size: 100%;
-    padding: 128px 32px 169px 32px;
+    padding: 64px 32px 169px 32px;
     display: flex;
     flex-direction: column;
     gap: 18px;
