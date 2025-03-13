@@ -158,10 +158,8 @@
 
 @media screen and (min-width: 1440px) {
   .reviews {
-    padding: 164px 0 0;
+    padding: 82px 0 0 0;
   }
-
-
 
   .slider-controls {
     bottom: -50px;

@@ -161,7 +161,6 @@ function disableButtons() {
   disableButton(nextButton);
 }
 
-// Додаємо обробник зміни розміру
 window.addEventListener('resize', handleResize);
 
 fetchReviews();

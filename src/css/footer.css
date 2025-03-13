@@ -2,7 +2,7 @@
   background-image: url('/images/footer/footer-bg-mob.png');
   margin-top: 32px;
   margin: 0 auto;
-  padding: 16px 32px;
+  padding: 32px 16px;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -215,8 +215,7 @@
   .work {
     background-image: url('/images/footer/footer-bg-tablet.png');
     background-size: 100%;
-    margin-top: 48px;
-    padding: 80px 32px 169px 32px;
+    padding: 128px 32px 169px 32px;
     display: flex;
     flex-direction: column;
     gap: 18px;
