@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .covers {
   position: relative;
   height: 572px;
@@ -15,6 +11,11 @@
   overflow: hidden;
   width: 100%;
   height: 508px;
+  background-image: url('/images/covers/covers-mob-bckg.webp'); /* Fallback */
+  background-image: -webkit-image-set(
+    url('/images/covers/covers-mob-bckg.webp') 1x,
+    url('/images/covers/covers-mob-bckg-2x.webp') 2x
+  );
   background-image: image-set(
     url('/images/covers/covers-mob-bckg.webp') 1x,
     url('/images/covers/covers-mob-bckg-2x.webp') 2x
@@ -76,6 +77,11 @@
   }
   .covers-wrapper {
     height: 960px;
+    background-image: url('/images/covers/covers-dsk-bckg.webp'); /* Fallback */
+    background-image: -webkit-image-set(
+      url('/images/covers/covers-dsk-bckg.webp') 1x,
+      url('/images/covers/covers-dsk-bckg-2x.webp') 2x
+    );
     background-image: image-set(
       url('/images/covers/covers-dsk-bckg.webp') 1x,
       url('/images/covers/covers-dsk-bckg-2x.webp') 2x
@@ -104,6 +110,11 @@
 
   .covers-wrapper {
     height: 960px;
+    background-image: url('/images/covers/covers-dsk-bckg.webp'); /* Fallback */
+    background-image: -webkit-image-set(
+      url('/images/covers/covers-dsk-bckg.webp') 1x,
+      url('/images/covers/covers-dsk-bckg-2x.webp') 2x
+    );
     background-image: image-set(
       url('/images/covers/covers-dsk-bckg.webp') 1x,
       url('/images/covers/covers-dsk-bckg-2x.webp') 2x
