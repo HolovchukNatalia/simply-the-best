@@ -55,16 +55,12 @@ function applyResponsiveStyles() {
   const sliderButtons = document.querySelectorAll('.slider-btn');
 
   if (screenWidth <= 767) {
-    containerReviews.style.maxWidth = '375px';
     containerReviews.style.padding = '0 16px';
     reviewsSection.style.padding = '32px 0';
   } else if (screenWidth <= 1439) {
-    containerReviews.style.width = '734px';
     containerReviews.style.padding = '0 16px';
     reviewsSection.style.padding = '48px 0';
   } else {
-    containerReviews.style.removeProperty('max-width');
-    containerReviews.style.removeProperty('width');
     containerReviews.style.removeProperty('padding');
     reviewsSection.style.removeProperty('padding');
   }

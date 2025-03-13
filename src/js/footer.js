@@ -54,15 +54,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
       console.log(response);
 
-     if (response.status === 201) {
-       successModal.classList.remove('hidden');
-       document.body.classList.add('modal-open')
-       form.reset();
-       
-       emailMessage.textContent = '';
-       emailMessage.classList.remove('valid', 'invalid');
-       emailInput.classList.remove('valid', 'invalid');
-     } else {
+    if (response.status === 201) {
+      successModal.classList.remove('hidden');
+      document.body.classList.add('modal-open')
+      form.reset();
+      
+      emailMessage.textContent = '';
+      emailMessage.classList.remove('valid', 'invalid');
+      emailInput.classList.remove('valid', 'invalid');
+    } else {
       throw new Error('Unexpected server response');  
 }
     } catch (error) {

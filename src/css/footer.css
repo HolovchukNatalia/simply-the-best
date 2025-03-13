@@ -12,6 +12,16 @@
     background-image: url(/images/footer/footer-bg-2x-mob.png);
   }
 }
+
+.footer-logo-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.second-line {
+  margin-left: -50px;
+}
 .thumb {
   width: 44px;
   height: 44px;
@@ -225,6 +235,10 @@
       background-image: url('/images/footer/footer-bg-2x-tablet.png');
     }
   }
+  .second-line {
+    margin-top: 10px;
+    margin-left: -80px;
+  }
   .thumb {
     width: 70px;
     height: 70px;
@@ -284,6 +298,10 @@
     .work {
       background-image: url('/images/footer/footer-bg-2x-laptop.png');
     }
+  }
+  .second-line {
+    margin-top: 10px;
+    margin-left: -85px;
   }
   .footer-form {
     max-width: 1048px;

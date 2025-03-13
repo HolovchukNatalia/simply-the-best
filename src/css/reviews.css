@@ -31,7 +31,8 @@
   gap: 16px;
 }
 
-.review-card {
+.swiper-slide.review-card {
+  height: 344px;
   border-radius: 20px;
   padding: 32px 24px;
   text-align: left;
@@ -170,4 +171,8 @@
     height: 68px;
     padding: 18px;
   }
+}
+
+#reviews-swiper-button{
+  top: 115%;
 }
