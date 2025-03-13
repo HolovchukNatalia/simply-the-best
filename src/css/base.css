@@ -24,10 +24,15 @@
 	-webkit-text-size-adjust: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'InterTight', sans-serif;
     font-weight: 500;
 }
+
 .visually-hidden {
 	position: absolute;
 	width: 1px;
