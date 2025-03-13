@@ -13,26 +13,35 @@
 
     <div class="frame-photo">
       <picture>
-        <!-- Для телефонів 2x -->
-        <source srcset="../images/about-me/about-me-mob-2x.webp" type="image" />
+        <source
+          media="(max-width: 767px)"
+          srcset="
+            /images/about-me/about-me-mob.webp    1x,
+            /images/about-me/about-me-mob-2x.webp 2x
+          "
+          type="image/webp"
+        />
 
-        <!-- Для телефонів 1x -->
-        <source srcset="../images/about-me/about-me-mob.webp" type="image" />
+        <source
+          media="(min-width: 768px) and (max-width: 1439px)"
+          srcset="
+            /images/about-me/about-me-tab.webp    1x,
+            /images/about-me/about-me-tab-2x.webp 2x
+          "
+          type="image/webp"
+        />
 
-        <!-- Для планшетів 2x -->
-        <source srcset="../images/about-me/about-me-tab-2x.webp" type="image" />
-
-        <!-- Для планшетів 1x -->
-        <source srcset="../images/about-me/about-me-tab.webp" type="image" />
-
-        <!-- Для десктопа 2x -->
-        <source srcset="../images/about-me/about-me-dsk-2x.webp" type="image" />
-
-        <!-- Для десктопа 1x -->
-        <source srcset="../images/about-me/about-me-dsk.webp" type="image" />
+        <source
+          media="(min-width: 1440px)"
+          srcset="
+            /images/about-me/about-me-dsk.webp    1x,
+            /images/about-me/about-me-dsk-2x.webp 2x
+          "
+          type="image/webp"
+        />
 
         <img
-          src="../images/about-me/about-me-dsk.webp"
+          src="/images/about-me/about-me-dsk.webp"
           alt="photo"
           class="responsive-photo"
         />
