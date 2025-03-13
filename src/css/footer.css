@@ -1,9 +1,5 @@
 .work {
-  width: 100%;
-  background-image: url(../images/footer/footer-bckg.webp);
-  background-size: 85px 100%;
-  background-position: top right;
-  background-repeat: no-repeat;
+  background-image: url('/images/footer/footer-bg-mob.png');
   margin-top: 32px;
   margin: 0 auto;
   padding: 16px 32px;
@@ -13,7 +9,7 @@
 }
 @media (min-resolution: 192dpi) {
   .work {
-    background-image: url(../images/footer/footer-bckg-2x.webp);
+    background-image: url(/images/footer/footer-bg-2x-mob.png);
   }
 }
 .thumb {
@@ -217,12 +213,18 @@
 /*Styles for tablet devices*/
 @media only screen and (min-width: 768px) {
   .work {
+    background-image: url('/images/footer/footer-bg-tablet.png');
+    background-size: 100%;
     margin-top: 48px;
     padding: 80px 32px 169px 32px;
-    background-size: 196px 100%;
     display: flex;
     flex-direction: column;
     gap: 18px;
+  }
+  @media (min-resolution: 192dpi) {
+    .work {
+      background-image: url('/images/footer/footer-bg-2x-tablet.png');
+    }
   }
   .thumb {
     width: 70px;
@@ -274,10 +276,15 @@
 /*Styles for desktop devices*/
 @media only screen and (min-width: 1440px) {
   .work {
+    background-image: url('/images/footer/footer-bg-laptop.png');
+    background-size: 100%;
     margin-top: 82px;
     padding: 80px 196px 169px 196px;
-
-    background-size: 400px 100%;
+  }
+  @media (min-resolution: 192dpi) {
+    .work {
+      background-image: url('/images/footer/footer-bg-2x-laptop.png');
+    }
   }
   .footer-form {
     max-width: 1048px;
