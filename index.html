@@ -133,24 +133,20 @@
 
     <div class="frame-photo">
       <picture>
-        <!-- Для телефонів 2x -->
-        <source srcset="/simply-the-best/assets/about-me-mob-2x-DybFksOC.webp" type="image/webp" />
-
-        <!-- Для телефонів 1x -->
-        <source srcset="/simply-the-best/assets/about-me-mob-DVM6Q_K_.webp" type="image/webp" />
-
-        <!-- Для планшетів 2x -->
-        <source srcset="/simply-the-best/assets/about-me-tab-2x-D8Z2Mps1.webp" type="image/webp" />
-
-        <!-- Для планшетів 1x -->
-        <source srcset="/simply-the-best/assets/about-me-tab-B5bi9hqi.webp" type="image/webp" />
-
-        <!-- Для десктопа 2x -->
-        <source srcset="/simply-the-best/assets/about-me-dsk-2x-Dl46bCnu.webp" type="image/webp" />
-
-        <!-- Для десктопа 1x -->
-        <source srcset="/simply-the-best/assets/about-me-dsk-c7U-OXAm.webp" type="image/webp" />
-
+        <source
+          media="(max-width: 767px)"
+          srcset="/simply-the-best/assets/about-me-mob-DVM6Q_K_.webp 1x, /simply-the-best/assets/about-me-mob-2x-DybFksOC.webp 2x"
+          type="image/webp"
+        />
+        <source
+        media="(min-width: 768px) and (max-width: 1439px)"
+        srcset="/simply-the-best/assets/about-me-tab-B5bi9hqi.webp 1x, /simply-the-best/assets/about-me-tab-2x-D8Z2Mps1.webp 2x"
+        type="image/webp"/>
+        <source
+        media="(min-width: 1440px)"
+        srcset="/simply-the-best/assets/about-me-dsk-c7U-OXAm.webp 1x, /simply-the-best/assets/about-me-dsk-2x-Dl46bCnu.webp 2x"
+        type="image/webp"/>
+        
         <img
           src="/simply-the-best/assets/about-me-dsk-c7U-OXAm.webp"
           alt="photo"
